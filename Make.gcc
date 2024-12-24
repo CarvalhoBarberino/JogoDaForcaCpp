@@ -1,0 +1,7 @@
+BIN_OUT=bin/JogoDaForca.exe
+
+compila:
+	echo "Inicio da compilacao"
+	g++ -c src/jogoDaForca.cpp -I $(CABS) -o bin/jogoDaForca.o
+	g++ -c src/jukUpper.cpp -I $(CABS) -o bin/jukUpper.o
+	g++ bin/*.o -o $(BIN_OUT)
