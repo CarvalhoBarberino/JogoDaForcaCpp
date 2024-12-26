@@ -7,4 +7,5 @@ namespace juk
 	void Upper(std::string&);
 	void PulaLinhas(int);
 	std::string Repete(std::string, int);
+	void atualizaDisplay(std::string&, std::string, char);
 }
