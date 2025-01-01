@@ -14,7 +14,7 @@ void juk::Upper(string& entrada){
 void juk::PulaLinhas(int n){
 	cout << endl;
 	for (int i = 0; i < n; i++){
-		cout << "." << endl;
+		cout << " " << endl;
 	}
 	return;
 }
@@ -30,10 +30,19 @@ string juk::Repete(string branco, int n){
 
 //Esta funcao atualiza a variavel display
 void juk::atualizaDisplay(string& display, string palavra_secreta, char letraSugerida){
+	bool um_acerto = false;
 	for (int i = 0; i < palavra_secreta.size(); i++){
 		if (letraSugerida == palavra_secreta[i]){
 			display[i] = letraSugerida;
-			cout << "Parabens. Vc acertou uma letra: " << display << endl;
+			um_acerto = true;
 		}
+	}
+	if (um_acerto){
+		cout << endl << endl << endl << endl << endl << "Parabens. Vc acertou uma letra: " << endl;
+		cout << "Veja como ficou: " << display << endl;
+	}
+	else{
+		cout << endl << endl << endl << endl << endl << "Infelizmente a letra: " << letraSugerida << " nao pertence a palavra secreta. " << endl;
+		cout << "Veja como ficou: " << display << endl;
 	}
 }
