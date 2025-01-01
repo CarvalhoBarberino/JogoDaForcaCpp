@@ -1,5 +1,5 @@
 #include "jukFuncoes.h"
-#define MAX 50
+#define MAX 26
 
 using namespace std;
 
@@ -14,7 +14,6 @@ int main(){
 
 	// Inicia display
 	string display = juk::Repete("_", palavra_secreta.size());
-	cout << display << endl;
 	
 	// Inicia tentativas
 	bool acertouTodas = false;
@@ -24,23 +23,22 @@ int main(){
 	
 	while (!acertouTodas && i <= MAX)
 	{
-		juk::PulaLinhas(3);// Espacamento entre tentativas
 		cout << "Jogo da Forca" << endl;
 		cout << "Numero maximo de tentativas: " << MAX << endl;
+		cout << "Veja como ficou: " << display << endl;
 		cout << "Tentativa: " << i << endl;
 		cout << "Digite uma letra: ";
 		cin >> entrada;
 		juk::Upper(entrada);
 		letraSugerida = entrada[0];
+		juk::PulaLinhas(80);// Espacamento entre tentativas
 		juk::atualizaDisplay(display, palavra_secreta, letraSugerida);
 		//string::npos == display.find("_") ? acertouTodas = true : cout << "ainda falta" << endl;
 		if (string::npos == display.find("_")){
 			acertouTodas = true;
+			juk::PulaLinhas(80);
 			cout << "Parabens voce acertou todas as letras" << endl;
 			cout << display << endl;
-		}
-		else {
-			cout << "Tente mais um pouco." << endl;
 		}
 		i++;
 	}

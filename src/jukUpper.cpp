@@ -38,11 +38,9 @@ void juk::atualizaDisplay(string& display, string palavra_secreta, char letraSug
 		}
 	}
 	if (um_acerto){
-		cout << endl << endl << endl << endl << endl << "Parabens. Vc acertou uma letra: " << endl;
-		cout << "Veja como ficou: " << display << endl;
+		cout << "Parabens. A letra: " << letraSugerida << " pertence a palavra secreta." << endl;
 	}
 	else{
-		cout << endl << endl << endl << endl << endl << "Infelizmente a letra: " << letraSugerida << " nao pertence a palavra secreta. " << endl;
-		cout << "Veja como ficou: " << display << endl;
+		cout << "Infelizmente a letra: " << letraSugerida << " nao pertence a palavra secreta." << endl;
 	}
 }
